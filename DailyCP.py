@@ -14,11 +14,11 @@ from Crypto.Cipher import AES
 
 
 class DailyCP:
-    def __init__(self, schoolName="南京工程学院"):
+    def __init__(self, schoolName=""):
         self.key = "b3L26XNL"  # dynamic when app update
         self.session = requests.session()
         self.host = re.findall(r"//(.*?)/", self.loginUrl)[0]
-        self.loginUrl = "https://njit.campusphere.net/wec-portal-mobile/client"
+        self.loginUrl = ""
         self.isIAPLogin = True
         self.session.headers.update({
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36 Edg/83.0.478.37",
