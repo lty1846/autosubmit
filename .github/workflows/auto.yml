@@ -41,5 +41,5 @@ jobs:
       - name : Upload formdb
         uses: actions/upload-artifact@master
         with:
-          name: formdb
-          path: formdb
+          name: 1129.json
+          path: autosubmit/formdb
