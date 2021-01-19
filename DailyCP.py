@@ -14,10 +14,10 @@ from Crypto.Cipher import AES
 
 
 class DailyCP:
-    def __init__(self, schoolName=""):
+    def __init__(self, schoolName="安徽理工大学"):
         self.key = "b3L26XNL"  # dynamic when app update
         self.session = requests.session()
-        self.host = re.findall(r"//(.*?)/", self.loginUrl)[0]
+        self.host = ""
         self.loginUrl = ""
         self.isIAPLogin = True
         self.session.headers.update({
@@ -49,7 +49,7 @@ class DailyCP:
         if ret == "":
             print("学校并没有申请入驻今日校园平台")
             exit()
-        print("{name}的登录地址{url}".format(name=schoolName, url=self.loginUrl)) 
+        print("{name}的登录地址{url}".format(name=schoolName, url=self.loginUrl))
         self.host = re.findall(r"//(.*?)/", self.loginUrl)[0]
 
     def encrypt(self, text):
